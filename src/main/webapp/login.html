@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+</head>
+<body>
+<form action="/register" method="get">
+    <h2>Register</h2>
+
+    <label class="required">Name</label>
+    <div class="name-fields">
+        <input type="text" name="first_name" placeholder="First" required />
+        <input type="text" name="last_name" placeholder="Last" required />
+    </div>
+
+    <label class="required">Username</label>
+    <input type="text" name="username" required />
+
+    <label class="required">E-mail</label>
+    <input type="email" name="email" required />
+
+    <label class="required">Password</label>
+    <input type="password" name="password" required />
+
+    <label>Facebook</label>
+    <input type="text" name="facebook" placeholder="Enter your Facebook profile URL" />
+    <small>Enter your Facebook profile URL.</small>
+
+    <label>Short Bio</label>
+    <textarea name="bio" placeholder="Share a little information about yourself." rows="4"></textarea>
+
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
