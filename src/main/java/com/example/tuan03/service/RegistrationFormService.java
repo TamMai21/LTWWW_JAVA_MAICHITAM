@@ -1,6 +1,6 @@
-package com.example.tuan03;
+package com.example.tuan03.service;
 
-import com.example.tuan03.entity.Student;
+import com.example.tuan03.model.Student;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,17 +10,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "registerServlet", urlPatterns = {"/registration-form"})
-public class RegistrationForm extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    public RegistrationForm(){
-        super();
-    }
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().append("Served at: ").append(request.getContextPath());
+//@WebServlet(name = "registerServlet", urlPatterns = {"/registration-form"})
 
-// Get data from form
+public class RegistrationFormService {
+    public Student registerStudent(HttpServletRequest request) {
         String fname = request.getParameter("txtFName");
         String lname = request.getParameter("txtLName");
         String day = request.getParameter("day");
@@ -34,11 +27,14 @@ public class RegistrationForm extends HttpServlet {
         String pinCode = request.getParameter("txtPinCode");
         String state = request.getParameter("txtState");
         String country = request.getParameter("txtCountry");
-        String hobbies = request.getParameter("chkHobbies");
+
+        String[] hobbiesArr = request.getParameterValues("chkHobbies");
+        String hobbies = (hobbiesArr != null) ? String.join(", ", hobbiesArr) : "";
+
         String course = request.getParameter("rdCourse");
         String birthDate = day + "/" + month + "/" + year;
 
-// Set data to Student
+        // tạo Student
         Student sv = new Student();
         sv.setFirstName(fname);
         sv.setLastName(lname);
@@ -46,12 +42,14 @@ public class RegistrationForm extends HttpServlet {
         sv.setGender(gender);
         sv.setMobile(mobile);
         sv.setBirthday(birthDate);
+        sv.setAddress(address);
+        sv.setCity(city);
+        sv.setPinCode(pinCode);
+        sv.setState(state);
+        sv.setCountry(country);
+//        sv.setHobbies(hobbies);
+//        sv.setCourse(course);
 
-// Set object student to request object
-        request.setAttribute("student", sv);
-
-// Forward to result-form.jsp
-        RequestDispatcher rd = request.getRequestDispatcher("result-form.jsp");
-        rd.forward(request, response);
+        return sv;
     }
 }

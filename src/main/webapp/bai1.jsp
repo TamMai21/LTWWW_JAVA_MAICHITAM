@@ -167,9 +167,8 @@
 </head>
 <body>
 <div class="container">
-    <form action="registration-form" name="formDangKy" method="GET">
-
-        <!-- First Name -->
+    <form action="registration" method="post">
+    <!-- First Name -->
         <div class="form-row">
             <label class="form-label">First name:</label>
             <input type="text" name="txtFName" class="form-input">

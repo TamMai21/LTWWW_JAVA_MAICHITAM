@@ -1,8 +1,6 @@
-package com.example.tuan03.entity;
+package com.example.tuan03.model;
 
 import lombok.*;
-
-import java.time.LocalDate;
 
 @Getter
 @Setter
