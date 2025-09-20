@@ -1,6 +1,8 @@
-package com.example.tuan03.model;
+package com.example.tuan04.model;
+
 
 import lombok.*;
+
 
 @AllArgsConstructor
 @NoArgsConstructor

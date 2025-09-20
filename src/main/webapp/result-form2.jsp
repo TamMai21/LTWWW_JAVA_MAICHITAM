@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.tuan03.model.User" %>
+<%@ page import="com.example.tuan04.model.User" %>
 <html>
 <head>
     <title>Registration Result</title>

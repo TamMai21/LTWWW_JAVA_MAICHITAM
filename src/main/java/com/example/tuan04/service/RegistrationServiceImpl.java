@@ -1,10 +1,10 @@
-package com.example.tuan03.service;
+package com.example.tuan04.service;
 
-import com.example.tuan03.model.Student;
-import com.example.tuan03.model.User;
+import com.example.tuan04.model.User;
 import jakarta.servlet.http.HttpServletRequest;
 
-public class RegistrationService {
+public class RegistrationServiceImpl implements com.example.tuan04.service.interf.RegistrationService {
+    @Override
     public User registerUser(HttpServletRequest request) {
         String fname = request.getParameter("firstName");
         String lname = request.getParameter("lastName");
